@@ -1,0 +1,21 @@
+<%= form_for(@dlzh) do |f| %>
+  <% if @dlzh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dlzh.errors.count, "error") %> prohibited this dlzh from being saved:</h2>
+
+      <ul>
+      <% @dlzh.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :d_name %><br>
+    <%= f.text_field :d_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Добавить должность" %>
+  </div>
+<% end %>

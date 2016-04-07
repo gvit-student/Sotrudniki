@@ -1,0 +1,41 @@
+<%= form_for(@sotr) do |f| %>
+  <% if @sotr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sotr.errors.count, "error") %> prohibited this sotr from being saved:</h2>
+
+      <ul>
+      <% @sotr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :s_fam %><br>
+    <%= f.text_field :s_fam %>
+  </div>
+  <div class="field">
+    <%= f.label :s_name %><br>
+    <%= f.text_field :s_name %>
+  </div>
+  <div class="field">
+    <%= f.label :s_otch %><br>
+    <%= f.text_field :s_otch %>
+  </div>
+  <div class="field">
+    <%= f.label :s_date %><br>
+    <%= f.date_select :s_date, start_year: 1930, end_year: 1998 %>
+  </div>
+  <div class="field">
+    <%= f.label :dlzh_id %><br>
+    <%= f.collection_select(:dlzh_id, Dlzh.all, :id, :d_name) %>
+  </div>
+  <div class="field">
+    <%= f.label :s_photo %><br>
+    <%= f.text_field :s_photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Добавить сотрудника" %>
+  </div>
+<% end %>

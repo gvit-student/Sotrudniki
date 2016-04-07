@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>S fam:</strong>
+  <%= @sotr.s_fam %>
+</p>
+
+<p>
+  <strong>S name:</strong>
+  <%= @sotr.s_name %>
+</p>
+
+<p>
+  <strong>S otch:</strong>
+  <%= @sotr.s_otch %>
+</p>
+
+<p>
+  <strong>S date:</strong>
+  <%= @sotr.s_date %>
+</p>
+
+<p>
+  <strong>Dlzh:</strong>
+  <%= @sotr.dlzh.d_name %>
+</p>
+
+<p>
+  <strong>S photo:</strong>
+  <%= @sotr.s_photo %>
+</p>
+
+<%= link_to 'Edit', edit_sotr_path(@sotr) %> |
+<%= link_to 'Back', sotrs_path %>

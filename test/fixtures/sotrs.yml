@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s_fam: MyString
+  s_name: MyString
+  s_otch: MyString
+  s_date: 2016-04-07
+  dlzh_id: 
+  s_photo: MyString
+
+two:
+  s_fam: MyString
+  s_name: MyString
+  s_otch: MyString
+  s_date: 2016-04-07
+  dlzh_id: 
+  s_photo: MyString

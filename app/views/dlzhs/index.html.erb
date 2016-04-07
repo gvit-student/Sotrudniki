@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dlzhs</h1>
+
+<%= link_to 'Новая должность', new_dlzh_path %> |
+<%= link_to 'Главная страница', controller: 'home_page' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>D name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dlzhs.each do |dlzh| %>
+      <tr>
+        <td><%= dlzh.d_name %></td>
+        <td><%= link_to 'Show', dlzh %></td>
+        <td><%= link_to 'Edit', edit_dlzh_path(dlzh) %></td>
+        <td><%= link_to 'Destroy', dlzh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

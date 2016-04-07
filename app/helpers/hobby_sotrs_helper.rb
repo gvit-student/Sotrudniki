@@ -1,0 +1,2 @@
+module HobbySotrsHelper
+end

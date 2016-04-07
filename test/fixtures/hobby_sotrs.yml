@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sotr_id: 
+  hobby_id: 
+
+two:
+  sotr_id: 
+  hobby_id: 
