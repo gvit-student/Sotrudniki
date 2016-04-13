@@ -1,0 +1,2 @@
+module UvlHobbyHelper
+end

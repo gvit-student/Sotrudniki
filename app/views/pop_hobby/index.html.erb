@@ -1,0 +1,20 @@
+<h1>Отчет популярность хобби</h1>
+<%= link_to 'Главная страница', controller: 'home_page' %><br><br>
+
+<%= form_tag("search", method: "get") do %>
+  <%= label_tag(:q, "Поиск id:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Искать") %>
+<% end %>
+
+<table border="1">
+	<th>Код</th>
+	<th>Хобби</th>
+	<th>Число увлеченных</th>
+	<%= Hobby.find_each do |hobby| %>
+		<tr>
+			<td><%= hobby.id %></td>
+			<td><%= hobby.h_name %></td>
+			<td><%= HobbySotr.where(hobby_id: hobby.id).count %></td>
+		</tr>
+	<% end %>

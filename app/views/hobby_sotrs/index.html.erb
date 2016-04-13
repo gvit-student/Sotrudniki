@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Hobby Sotrs</h1>
+<h1>Справочник увлечений сотрудников</h1>
 
-<%= link_to 'New Hobby sotr', new_hobby_sotr_path %> |
+<%= link_to 'Добавить увлечение сотрудника', new_hobby_sotr_path %> |
 <%= link_to 'Главная страница', controller: 'home_page' %>
+
+
 
 <table>
   <thead>
@@ -21,9 +23,9 @@
         <td><%= hobby_sotr.sotr.id %></td>
         <td><%= hobby_sotr.sotr.s_fam %></td>
         <td><%= hobby_sotr.hobby.h_name %></td>
-        <td><%= link_to 'Show', hobby_sotr %></td>
-        <td><%= link_to 'Edit', edit_hobby_sotr_path(hobby_sotr) %></td>
-        <td><%= link_to 'Destroy', hobby_sotr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', hobby_sotr %></td>
+        <td><%= link_to 'Изменить', edit_hobby_sotr_path(hobby_sotr) %></td>
+        <td><%= link_to 'Удалить', hobby_sotr, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>

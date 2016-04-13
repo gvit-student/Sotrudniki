@@ -1,7 +1,7 @@
 <%= form_for(@sotr) do |f| %>
   <% if @sotr.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@sotr.errors.count, "error") %> prohibited this sotr from being saved:</h2>
+      <h2><%= pluralize(@sotr.errors.count, "error") %> Произошла ошибка, должностей не записана:</h2>
 
       <ul>
       <% @sotr.errors.full_messages.each do |message| %>
@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :s_fam %><br>
+    <%= f.label :Фамилия %><br>
     <%= f.text_field :s_fam %>
   </div>
   <div class="field">
-    <%= f.label :s_name %><br>
+    <%= f.label :Имя %><br>
     <%= f.text_field :s_name %>
   </div>
   <div class="field">
-    <%= f.label :s_otch %><br>
+    <%= f.label :Отчество %><br>
     <%= f.text_field :s_otch %>
   </div>
   <div class="field">
-    <%= f.label :s_date %><br>
+    <%= f.label :Дата_рождения %><br>
     <%= f.date_select :s_date, start_year: 1930, end_year: 1998 %>
   </div>
   <div class="field">
-    <%= f.label :dlzh_id %><br>
+    <%= f.label :Должность %><br>
     <%= f.collection_select(:dlzh_id, Dlzh.all, :id, :d_name) %>
   </div>
   <div class="field">
-    <%= f.label :s_photo %><br>
+    <%= f.label :Фото %><br>
     <%= f.text_field :s_photo %>
   </div>
   <div class="actions">

@@ -1,0 +1,2 @@
+module PopHobbyHelper
+end

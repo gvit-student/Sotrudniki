@@ -1,0 +1,24 @@
+<h1>Отчет увлеченность хобби сотрудников</h1>
+<%= link_to 'Главная страница', controller: 'home_page' %><br><br>
+
+<%= form_tag("search", method: "get") do %>
+  <%= label_tag(:q, "Поиск id:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Искать") %>  <%= link_to 'Сбросить', controller: 'pop_hobby' %>
+<% end %>
+
+<table border="1">
+	<th>Код</th>
+	<th>Фамилия</th>
+	<th>Имя</th>
+	<th>Отчество</th>
+	<th>Число хобби</th>
+	<%= Sotr.where("id = ?", params[:q]).find_each do |sotr| %>
+		<tr>
+			<td><%= sotr.id %></td>
+			<td><%= sotr.s_fam %></td>
+			<td><%= sotr.s_name %></td>
+			<td><%= sotr.s_otch %></td>
+			<td><%= HobbySotr.where(sotr_id: sotr.id).count %></td>
+		</tr>
+	<% end %>

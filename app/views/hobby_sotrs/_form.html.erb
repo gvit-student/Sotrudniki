@@ -1,7 +1,7 @@
 <%= form_for(@hobby_sotr) do |f| %>
   <% if @hobby_sotr.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hobby_sotr.errors.count, "error") %> prohibited this hobby_sotr from being saved:</h2>
+      <h2><%= pluralize(@hobby_sotr.errors.count, "error") %> Произошла ошибка, должностей не записана:</h2>
 
       <ul>
       <% @hobby_sotr.errors.full_messages.each do |message| %>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :sotr_id %><br>
+    <%= f.label :id_Сотрудника %><br>
     <%= f.collection_select(:sotr_id, Sotr.all, :id, :id) %>
   </div>
   <div class="field">
-    <%= f.label :hobby_id %><br>
+    <%= f.label :Название_хобби %><br>
     <%= f.collection_select(:hobby_id, Hobby.all, :id, :h_name) %>
   </div>
   <div class="actions">

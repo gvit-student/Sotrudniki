@@ -1,5 +1,32 @@
 <h1>Стартовая страница</h1>
-<%= link_to 'Должности', controller: 'dlzhs'%><br>
-<%= link_to 'Хобби', controller: 'hobbies'%><br>
-<%= link_to 'Сотрудники', controller: 'sotrs'%><br>
-<%= link_to 'Хобби сотрудников', controller: 'hobby_sotrs'%>
+<table>
+<tr>
+	<td>
+		<h3>Справочники<h3>
+	</td>
+</tr>
+<tr>
+	<td>	
+		<%= link_to 'Должности', controller: 'dlzhs'%><br>
+		<%= link_to 'Хобби', controller: 'hobbies'%><br>
+		<%= link_to 'Сотрудники', controller: 'sotrs'%><br>
+		<%= link_to 'Хобби сотрудников', controller: 'hobby_sotrs'%><br>
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>Отчеты<h3>
+	</td>
+</tr>
+<tr>
+	<td>
+		<%= link_to 'Популярность хобби', controller: 'pop_hobby' %><br>
+	</td>
+</tr>
+<tr>
+	<td>
+		<%= link_to 'Увлеченность хобби', controller: 'uvl_hobby' %><br>
+	</td>
+</tr>
+</table>
+
