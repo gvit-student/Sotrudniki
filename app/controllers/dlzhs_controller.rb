@@ -1,6 +1,7 @@
 class DlzhsController < ApplicationController
   before_action :set_dlzh, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authorize, only: [:create, :update, :destroy]
+  
   # GET /dlzhs
   # GET /dlzhs.json
   def index
@@ -60,6 +61,7 @@ class DlzhsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

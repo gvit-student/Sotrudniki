@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+
+<h1>Список пользователей</h1>
+
+<%= link_to 'Главная страница', controller: 'home_page'%><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Показать', user %></td>
+        <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+        <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый пользователь', new_user_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407092841) do
+ActiveRecord::Schema.define(version: 20160415063633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20160407092841) do
   end
 
   add_index "sotrs", ["dlzh_id"], name: "index_sotrs_on_dlzh_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   add_foreign_key "hobby_sotrs", "hobbies"
   add_foreign_key "hobby_sotrs", "sotrs"

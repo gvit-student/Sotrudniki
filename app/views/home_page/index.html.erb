@@ -1,4 +1,7 @@
 <h1>Стартовая страница</h1>
+<% if session[:user_id] %>
+  <%= button_to 'Выйти', logout_path, method: :delete %>
+<% end %>
 <table>
 <tr>
 	<td>
@@ -26,6 +29,16 @@
 <tr>
 	<td>
 		<%= link_to 'Увлеченность хобби', controller: 'uvl_hobby' %><br>
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>Пользователи сайта<h3>
+	</td>
+</tr>
+<tr>
+	<td>
+		<%= link_to 'Пользователи', controller: 'users' %><br>
 	</td>
 </tr>
 </table>
