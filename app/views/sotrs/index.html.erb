@@ -14,22 +14,30 @@
       <th>дата рождения</th>
       <th>Должность</th>
       <th>Фотография</th>
+      <th>Статус</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @sotrs.each do |sotr| %>
-      <tr>
+      <% if sotr.s_delete == false %>
+        <tr>
+      <% else %>
+        <tr bgcolor="Red">
+      <% end %>
         <td><%= sotr.s_fam %></td>
         <td><%= sotr.s_name %></td>
         <td><%= sotr.s_otch %></td>
         <td><%= sotr.s_date %></td>
         <td><%= sotr.dlzh.d_name %></td>
         <td><%= sotr.s_photo %></td>
+        <td><%= sotr.status %></td>
         <td><%= link_to 'Показать', sotr %></td>
         <td><%= link_to 'Изменить', edit_sotr_path(sotr) %></td>
-        <td><%= link_to 'Удалить', sotr, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% if session[:user_id] == 2 %>
+          <td><%= link_to 'Удалить', sotr, method: :delete, data: { confirm: 'Вы уверены?' } %></td>  
+        <% end %>
       </tr>
     <% end %>
   </tbody>

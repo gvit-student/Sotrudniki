@@ -1,5 +1,9 @@
 <h1>Редактирование связи хобби-сотрудника</h1>
 
+<% if @hobby_sotr.status==true %>
+	<p><font color="Red" size="48"><%= flash[:notice] = "Запись находится в состоянии редактирования!" %></font></p>
+<% end %>
+
 <%= render 'form' %>
 
 <%= link_to 'Показать', @hobby_sotr %> |

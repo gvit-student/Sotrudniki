@@ -10,18 +10,26 @@
   <thead>
     <tr>
       <th>Название хобби</th>
+      <th>Статус</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @hobbies.each do |hobby| %>
-      <tr>
+      <% if hobby.s_delete == false %>
+        <tr>
+      <% else %>
+        <tr bgcolor="Red">
+      <% end %>
         <td><%= hobby.h_name %></td>
+        <td><%= hobby.status %></td>
         <td><%= link_to 'Показать', hobby %></td>
         <td><%= link_to 'Изменить', edit_hobby_path(hobby) %></td>
-        <td><%= link_to 'Удалить', hobby, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
+        <% if session[:user_id] == 2 %>
+          <td><%= link_to 'Удалить', hobby, method: :delete, data: { confirm: 'Вы уверены?' } %></td>  
+        <% end %>
+      </tr>      
     <% end %>
   </tbody>
 </table>

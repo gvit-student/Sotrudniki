@@ -13,19 +13,27 @@
       <th>Номер сотрудника</th>
       <th>Фамилия сотрудника</th>
       <th>Хобби</th>
+      <th>Статус</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @hobby_sotrs.each do |hobby_sotr| %>
-      <tr>
+      <% if hobby_sotr.s_delete == false %>
+        <tr>
+      <% else %>
+        <tr bgcolor="Red">
+      <% end %>
         <td><%= hobby_sotr.sotr.id %></td>
         <td><%= hobby_sotr.sotr.s_fam %></td>
         <td><%= hobby_sotr.hobby.h_name %></td>
+        <td><%= hobby_sotr.status %></td>
         <td><%= link_to 'Показать', hobby_sotr %></td>
         <td><%= link_to 'Изменить', edit_hobby_sotr_path(hobby_sotr) %></td>
-        <td><%= link_to 'Удалить', hobby_sotr, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% if session[:user_id] == 2 %>
+          <td><%= link_to 'Удалить', hobby_sotr, method: :delete, data: { confirm: 'Вы уверены?' } %></td>  
+        <% end %>
       </tr>
     <% end %>
   </tbody>

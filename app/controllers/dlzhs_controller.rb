@@ -41,25 +41,25 @@ class DlzhsController < ApplicationController
   # PATCH/PUT /dlzhs/1
   # PATCH/PUT /dlzhs/1.json
   def update
-    respond_to do |format|
-      if @dlzh.update(dlzh_params)
-        format.html { redirect_to @dlzh, notice: 'Dlzh was successfully updated.' }
-        format.json { render :show, status: :ok, location: @dlzh }
-      else
-        format.html { render :edit }
-        format.json { render json: @dlzh.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @dlzh.update(dlzh_params)
+          format.html { redirect_to @dlzh, notice: 'Dlzh was successfully updated.' }
+          format.json { render :show, status: :ok, location: @dlzh }
+        else
+          format.html { render :edit }
+          format.json { render json: @dlzh.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # DELETE /dlzhs/1
   # DELETE /dlzhs/1.json
   def destroy
-    @dlzh.destroy
-    respond_to do |format|
-      format.html { redirect_to dlzhs_url, notice: 'Dlzh was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      @dlzh.destroy
+        respond_to do |format|
+          format.html { redirect_to dlzhs_url, notice: 'Dlzh was successfully destroyed.' }
+          format.json { head :no_content }
+        end
   end
 
 
@@ -71,6 +71,6 @@ class DlzhsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dlzh_params
-      params.require(:dlzh).permit(:d_name)
+      params.require(:dlzh).permit(:d_name, :status, :s_delete)
     end
 end

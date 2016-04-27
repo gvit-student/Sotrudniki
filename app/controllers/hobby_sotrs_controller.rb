@@ -69,6 +69,6 @@ class HobbySotrsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hobby_sotr_params
-      params.require(:hobby_sotr).permit(:sotr_id, :hobby_id)
+      params.require(:hobby_sotr).permit(:sotr_id, :hobby_id, :status, :s_delete)
     end
 end

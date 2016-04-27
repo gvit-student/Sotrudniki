@@ -35,6 +35,14 @@
     <%= f.label :Фото %><br>
     <%= f.text_field :s_photo %>
   </div>
+  <div class="field">
+    <%= f.label :Статус %><br>
+    <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label :Удаление %><br>
+    <%= f.check_box :s_delete %>
+  </div>
   <div class="actions">
     <%= f.submit "Добавить сотрудника" %>
   </div>

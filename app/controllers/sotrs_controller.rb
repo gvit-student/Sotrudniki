@@ -69,6 +69,6 @@ class SotrsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sotr_params
-      params.require(:sotr).permit(:s_fam, :s_name, :s_otch, :s_date, :dlzh_id, :s_photo)
+      params.require(:sotr).permit(:s_fam, :s_name, :s_otch, :s_date, :dlzh_id, :s_photo, :status, :s_delete)
     end
 end

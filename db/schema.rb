@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418072724) do
+ActiveRecord::Schema.define(version: 20160427192334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 20160418072724) do
     t.string   "d_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "status"
+    t.boolean  "s_delete"
   end
 
   create_table "hobbies", force: :cascade do |t|
     t.string   "h_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "status"
+    t.boolean  "s_delete"
   end
 
   create_table "hobby_sotrs", force: :cascade do |t|
@@ -33,6 +37,8 @@ ActiveRecord::Schema.define(version: 20160418072724) do
     t.integer  "hobby_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "status"
+    t.boolean  "s_delete"
   end
 
   add_index "hobby_sotrs", ["hobby_id"], name: "index_hobby_sotrs_on_hobby_id", using: :btree
@@ -52,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160418072724) do
     t.string   "s_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "status"
+    t.boolean  "s_delete"
   end
 
   add_index "sotrs", ["dlzh_id"], name: "index_sotrs_on_dlzh_id", using: :btree

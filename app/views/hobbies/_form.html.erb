@@ -15,6 +15,14 @@
     <%= f.label :Название_хобби %><br>
     <%= f.text_field :h_name %>
   </div>
+  <div class="field">
+    <%= f.label :Статус %><br>
+    <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label :Удаление %><br>
+    <%= f.check_box :s_delete %>
+  </div>
   <div class="actions">
     <%= f.submit "Добавить хобби" %>
   </div>
