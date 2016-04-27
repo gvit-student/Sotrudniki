@@ -1,5 +1,6 @@
 <h1>Отчет увлеченность хобби сотрудников</h1>
-<%= link_to 'Главная страница', controller: 'home_page' %><br><br>
+<%= link_to 'Главная страница', controller: 'home_page' %> |
+<%= link_to 'Скачать Excel', 'http://localhost:3000/uvl_hobby/index.xls', data: { confirm: "Скачать файл?" } %>
 
 <%= form_tag("search", method: "get") do %>
   <%= label_tag(:q, "Поиск id:") %>

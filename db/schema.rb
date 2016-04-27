@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415063633) do
+ActiveRecord::Schema.define(version: 20160418072724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(version: 20160415063633) do
 
   add_index "hobby_sotrs", ["hobby_id"], name: "index_hobby_sotrs_on_hobby_id", using: :btree
   add_index "hobby_sotrs", ["sotr_id"], name: "index_hobby_sotrs_on_sotr_id", using: :btree
+
+  create_table "pop_hobbies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sotrs", force: :cascade do |t|
     t.string   "s_fam"

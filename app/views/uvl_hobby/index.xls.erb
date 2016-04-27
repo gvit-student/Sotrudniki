@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Код</Data></Cell>
+        <Cell><Data ss:Type="String">Фамилия</Data></Cell>
+        <Cell><Data ss:Type="String">Имя</Data></Cell>
+        <Cell><Data ss:Type="String">Отчество</Data></Cell>
+        <Cell><Data ss:Type="String">Число хобби</Data></Cell>
+      </Row>
+    <%= Sotr.find_each do |sotr| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= sotr.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sotr.s_fam %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sotr.s_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= sotr.s_otch %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= HobbySotr.where(sotr_id: sotr.id).count %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

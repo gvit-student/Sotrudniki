@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Код</Data></Cell>
+        <Cell><Data ss:Type="String">Хобби</Data></Cell>
+        <Cell><Data ss:Type="String">Число увлеченных</Data></Cell>
+      </Row>
+    <%= Hobby.find_each do |hobby| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= hobby.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= hobby.h_name %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= HobbySotr.where(hobby_id: hobby.id).count %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
